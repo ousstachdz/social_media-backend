@@ -1,0 +1,6 @@
+venv
+.env
+.env.local
+db.sqlite3
+__pycache__/
+staff_images/
