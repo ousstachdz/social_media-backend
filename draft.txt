@@ -1,0 +1,1 @@
+# REDIS_URL=redis://:751923b7b7bc4451a30a442218e023fc@helped-filly-30247.upstash.io:6379

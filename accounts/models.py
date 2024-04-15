@@ -17,6 +17,22 @@ class AppUser(User):
         return self.username
 
 
+class FriendRequest(models.Model):
+
+    class Meta:
+        ordering = ['timestamp']
+
+    timestamp = models.DateTimeField(auto_now_add=True)
+    sender = models.ForeignKey(
+        AppUser, on_delete=models.CASCADE, related_name='request_sender')
+    receiver = models.ForeignKey(
+        AppUser, on_delete=models.CASCADE, related_name='request_receiver')
+    is_accepted = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.sender.username + ' ' + self.receiver.username
+
+
 class Conversation(models.Model):
 
     class Meta:
